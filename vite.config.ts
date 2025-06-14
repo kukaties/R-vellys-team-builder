@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/R-vellys-team-builder/', // <--- ADD THIS LINE MANUALLY
+  base: '/R-vellys-team-builder/',
   build: {
     outDir: 'dist',
     rollupOptions: {
