@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserIcon } from './Icons';
-import type { PlayerDragInfo } from '../App'; // Import the interface
+import type { PlayerDragInfo } from '../App';
 
 interface TeamDisplayCardProps {
     title: string;
@@ -32,7 +32,6 @@ export const TeamDisplayCard: React.FC<TeamDisplayCardProps> = ({
         event.dataTransfer.setData('application/json', JSON.stringify(dragInfo));
         event.dataTransfer.effectAllowed = 'move';
         event.currentTarget.classList.add('opacity-50');
-        event.currentTarget.style.cursor = 'grabbing';
     };
 
     const handleDragOver = (event: React.DragEvent<HTMLLIElement>) => {
@@ -61,12 +60,7 @@ export const TeamDisplayCard: React.FC<TeamDisplayCardProps> = ({
             try {
                 const sourceInfo: PlayerDragInfo = JSON.parse(sourceInfoString);
                 const targetInfo: PlayerDragInfo = { name: targetPlayerName, teamId, indexInTeam: targetPlayerIndex };
-
-                if (sourceInfo.name === targetInfo.name && sourceInfo.teamId === targetInfo.teamId) {
-                    // Dropped on self
-                } else {
-                    onPlayerSwap(sourceInfo, targetInfo);
-                }
+                onPlayerSwap(sourceInfo, targetInfo);
             } catch (e) {
                 console.error("Error parsing drag data:", e);
             }
@@ -76,19 +70,7 @@ export const TeamDisplayCard: React.FC<TeamDisplayCardProps> = ({
     const handleDragEnd = (event: React.DragEvent<HTMLLIElement>) => {
         if (!isDraggable) return;
         event.currentTarget.classList.remove('opacity-50');
-        event.currentTarget.style.cursor = 'grab';
-        const allItems = event.currentTarget.closest('ul')?.querySelectorAll('li');
-        allItems?.forEach(item => item.classList.remove('ring-2', 'ring-yellow-500', 'ring-inset'));
     };
-
-    const playerNameStyle: React.CSSProperties = {
-        lineHeight: '1.8',
-    };
-
-    if (isScreenshotting) {
-        playerNameStyle.position = 'relative';
-        playerNameStyle.bottom = '6px';
-    }
 
     return (
         <div className={`bg-slate-800/70 backdrop-blur-sm p-6 rounded-xl shadow-xl border-t-4 ${borderColor} h-full flex flex-col`}>
@@ -101,7 +83,7 @@ export const TeamDisplayCard: React.FC<TeamDisplayCardProps> = ({
                     {players.map((player, index) => (
                         <li
                             key={`${player}-${index}-${teamId}`}
-                            className={`flex items-center text-slate-200 bg-slate-800/70 backdrop-blur-sm p-3 rounded-xl border-4 border-amber-500 shadow-xl hover:bg-slate-700/80 hover:border-amber-400 transition-all duration-150 ${isDraggable ? 'cursor-grab' : ''}`}
+                            className={`flex items-center text-slate-200 bg-slate-800/70 p-3 rounded-md transition-all duration-150 ${isDraggable ? 'cursor-grab' : ''}`}
                             draggable={isDraggable}
                             onDragStart={(e) => handleDragStart(e, player, index)}
                             onDragOver={handleDragOver}
@@ -109,15 +91,9 @@ export const TeamDisplayCard: React.FC<TeamDisplayCardProps> = ({
                             onDragLeave={handleDragLeave}
                             onDrop={(e) => handleDrop(e, player, index)}
                             onDragEnd={handleDragEnd}
-                            aria-label={`Player: ${player}. Draggable.`}
                         >
                             <UserIcon className={`w-5 h-5 mr-3 ${playerIconColor} flex-shrink-0`} />
-                            <span
-                                className="truncate"
-                                style={playerNameStyle}
-                            >
-                                {player}
-                            </span>
+                            <span className="truncate">{player}</span>
                         </li>
                     ))}
                 </ul>

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { TeamDisplayCard } from './components/TeamDisplayCard';
-import { ShuffleIcon, UsersIcon, UserGroupIcon, ExclamationTriangleIcon, CameraIcon, UserIcon } from './components/Icons';
+import { ShuffleIcon, UsersIcon, UserGroupIcon, ExclamationTriangleIcon, CameraIcon } from './components/Icons';
 
 declare global {
     interface Window {

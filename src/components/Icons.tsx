@@ -15,6 +15,11 @@ export const UserGroupIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) =>
         <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-3.741-5.582M18 18.72V9.77a3.75 3.75 0 00-3.75-3.75H9.75A3.75 3.75 0 006 9.77v8.95a3.75 3.75 0 003.75 3.75h4.5A3.75 3.75 0 0018 18.72zm-9 .78a3.723 3.723 0 01-3.723-3.723c0-1.995.078-3.032 1.146-4.067C7.451 10.645 8.513 10 9.75 10c1.237 0 2.299.645 3.354 1.703a4.83 4.83 0 011.146 4.067 3.723 3.723 0 01-3.723 3.723H9z" />
     </svg>
 );
+export const UserIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+    </svg>
+);
 export const ExclamationTriangleIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
