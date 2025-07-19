@@ -361,13 +361,13 @@ const App: React.FC = () => {
                     className="text-4xl sm:text-5xl font-extrabold text-[#fcc96b] py-3 sm:py-5"
                     style={{ fontFamily: '"Berlin Sans FB Demi Bold", "Berlin Sans FB Demi", "Berlin Sans FB Bold", "Berlin Sans FB", \'Inter\', sans-serif' }}
                 >
-                    RÄVELLYS TEAM BUILDER
+                    R VELLYS TEAM BUILDER
                 </h1>
             </header>
 
             <main className={`w-full max-w-2xl mb-4 transition-all duration-500 ease-in-out ${uiPhase === 'input'
-                    ? 'opacity-100 translate-y-0 max-h-[2000px]'
-                    : 'opacity-0 -translate-y-5 scale-95 max-h-0 pointer-events-none overflow-hidden'
+                ? 'opacity-100 translate-y-0 max-h-[2000px]'
+                : 'opacity-0 -translate-y-5 scale-95 max-h-0 pointer-events-none overflow-hidden'
                 }`}
             >
                 <div className="p-6 sm:p-8">
@@ -396,8 +396,8 @@ const App: React.FC = () => {
                                                         type="button"
                                                         onClick={() => handlePlayerOptionChange(index, role.name)}
                                                         className={`w-9 h-9 p-1 rounded-md transition-all duration-200 border-2 bg-slate-900/50 ${isSelected
-                                                                ? 'border-yellow-400 scale-110 opacity-100'
-                                                                : 'border-transparent hover:border-blue-600 opacity-60 hover:opacity-100'
+                                                            ? 'border-yellow-400 scale-110 opacity-100'
+                                                            : 'border-transparent hover:border-blue-600 opacity-60 hover:opacity-100'
                                                             }`}
                                                         aria-pressed={isSelected}
                                                         title={role.name}
@@ -471,8 +471,8 @@ const App: React.FC = () => {
             <div
                 ref={resultsSectionRef}
                 className={`w-full max-w-5xl transition-all duration-700 ease-out ${uiPhase === 'results'
-                        ? 'opacity-100 translate-y-0 scale-100 delay-200'
-                        : 'opacity-0 translate-y-10 scale-95 pointer-events-none'
+                    ? 'opacity-100 translate-y-0 scale-100 delay-200'
+                    : 'opacity-0 translate-y-10 scale-95 pointer-events-none'
                     }`}
                 aria-hidden={uiPhase !== 'results'}
             >
@@ -562,7 +562,7 @@ const App: React.FC = () => {
             </div>
 
             <footer className={`mt-auto pt-6 text-center text-blue-400 text-sm transition-opacity duration-300 ${uiPhase === 'submitting' && isLoading ? 'opacity-0' : 'opacity-100'}`}>
-                <p>© {new Date().getFullYear()} RÄVELLYS TEAM BUILDER. May your Nexus stand strong.</p>
+                <p>  {new Date().getFullYear()} Made by: Ihana Pekka kulta.</p>
             </footer>
         </div>
     );
