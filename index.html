@@ -1,54 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RÄVELLYS TEAM BUILDER</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    /* Custom scrollbar for LoL theme */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0A1428; /* Dark LoL Blue */
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #C89B3C; /* LoL Gold */
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #F0E6D2; /* Lighter LoL Gold/Parchment */
-    }
-  </style>
-<!-- 
-  The importmap below is no longer strictly necessary if React is installed via npm
-  and bundled by Vite. Vite will handle these dependencies.
-  You can remove it if you install React/ReactDOM via npm as shown in package.json.
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RÄVELLYS TEAM BUILDER</title>
 
--->
-<link rel="stylesheet" href="/index.css">
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "vite": "https://esm.sh/vite@^6.3.5",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.5.2"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/R-vellys-team-builder/assets/index-CkzOVBbc.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for LoL theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0A1428;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #C89B3C;
+            border-radius: 4px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #F0E6D2;
+            }
+    </style>
+
+    <!-- NO OTHER SCRIPT OR LINK TAGS SHOULD BE HERE -->
+
 </head>
-<body class="bg-gradient-to-br from-gray-900 to-blue-950">
-  <div id="root"></div>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" referrerpolicy="no-referrer"></script>
-  <!-- Vite will inject the bundled JavaScript here during build -->
-  <!-- For development, this points to your main TSX file -->
-</body>
-</html>
